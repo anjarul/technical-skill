@@ -39,7 +39,6 @@ urlpatterns = [
 
     path('', home, name='home'),
 
-    path('', include('prescription.urls', namespace='prescription')),
 
     path('edit/<int:id>/', edit, name='edit'),
 
@@ -52,6 +51,7 @@ urlpatterns = [
     # API
     path('api/v1/prescription/', PrescriptionList.as_view()),
 
+    path('', include('prescription.urls', namespace='prescription')),
 
     path('', include('custom_users.urls', namespace='custom_users')),
 
